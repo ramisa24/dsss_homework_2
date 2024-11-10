@@ -8,9 +8,9 @@ def generate_random_number(min_value, max_value):
 
 def find_random_operator():
     """
-    Randomly select a mathematical operator from +, -, /, % and *.
+    Randomly select a mathematical operator from +, -, % and *.
     """
-    return random.choice(['+', '-', '/', '%', '*'])
+    return random.choice(['+', '-','%', '*'])
 
 def create_problem_and_solution(value_1, value_2, operator):
     """
@@ -29,9 +29,12 @@ def create_problem_and_solution(value_1, value_2, operator):
         accurate_answer = value_1 + value_2
     elif operator == '-':
         accurate_answer = value_1 - value_2
+    elif operator == '%':
+         accurate_answer = value_1 % value_2
     else:
         accurate_answer = value_1 * value_2
     return problem, accurate_answer
+
 
 def math_quiz():
     "Initiate random mathmatical queries and evaluating the users input"

@@ -13,8 +13,8 @@ class TestMathQuiz(unittest.TestCase):
             self.assertTrue(min_value <= random_value <= max_value)
 
     def test_find_random_operator(self):
-        # Test if the operator selected is one of the expected values '+', '-', '/', '%', '*'
-        valid_operators = ['+', '-', '/', '%', '*']
+        # Test if the operator selected is one of the expected values '+', '-', '%', '*'
+        valid_operators = ['+', '-', '%', '*']
         for _ in range(1000):
             operator = find_random_operator()
             self.assertIn(operator, valid_operators)
@@ -24,7 +24,8 @@ class TestMathQuiz(unittest.TestCase):
         test_cases = [
             (3, 2, '+', '3 + 2', 5),
             (5, 3, '-', '5 - 3', 2),
-            (3, 6, '*', '3 * 6', 18)
+            (3, 6, '*', '3 * 6', 18),
+            (4, 2, '%', '4 % 2', 0)
         ]
 
         for value_1, value_2, operator, desired_problem, desired_answer in test_cases:
